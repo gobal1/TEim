@@ -1,48 +1,138 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  #lobot {
-    background: red;
-    height: 34px;
-    padding: 12px;
-    font-family: calibri;
-    text-align: center;
-    font-size: 30px
-  }
+  <meta charset="UTF-8">
+  <title>Video Templates</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
 
-  #vids {
-    display: block;
-    margin: 50px;
-  }
+    #lobot {
+      background: red;
+      font-family: 'Trebuchet MS', sans-serif;
+      padding: 12px;
+      text-align: center;
+      font-size: 30px;
+      color: white;
+    }
 
-  footer {
-    text-align: center;
-    font-family: calibri;
-    background: grey;
-    padding: 15px;
-    margin-top: 42px;
-  }
+    .vids-wrapper {
+      margin: 30px;
+    }
 
+    .vids {
+      border-radius: 15px;
+      background: gray;
+      padding: 20px;
+      width: 400px;
+      transition: width 0.8s ease;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
 
-</style>
+    .vids.expanded {
+      width: 1000px;
+    }
+
+    video {
+      width: 400px;
+      height: auto;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .info-container {
+      flex: 1;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .vids.expanded .info-container {
+      display: flex;
+    }
+
+    .info-text {
+      color: white;
+      font-size: 18px;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+
+    .expand-btn {
+      margin: 10px 30px;
+      padding: 10px 20px;
+      background-color: cadetblue;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      background: cadetblue;
+      padding: 20px;
+      color: aliceblue;
+      margin-top: 23px;
+    }
+  </style>
 </head>
 <body>
-    <div id="lobot">Video templates</div>
-    <div id="vids">
-    <video width="400" controls>
-      <source src="Start Fix(1)(1)(1).webm" type="video/webm">
-      <source src="Start Fix(1)(1)(1).webm" type="video/ogg">
-    </video>
+
+  <div id="lobot">Video Templates</div>
+
+  <!-- Video 1 -->
+  <div class="vids-wrapper">
+    <div class="vids" id="vid1">
+      <video controls>
+        <source src="Web Backg.webm" type="video/webm">
+        <source src="Web Backg.ogg" type="video/ogg">
+      </video>
+      <div class="info-container">
+        <div class="info-text">
+          Ini adalah template yang dibuat di After Effects.
+        </div>
+      </div>
     </div>
-    <div id="vids">
-    <video width="400" controls>
-      <source src="Background 1.webm" type="video/webm">
-      <source src="Background 1.webm" typr="video/ogg">
-    </video>
+    <button class="expand-btn" onclick="toggleExpand('vid1')">Info</button>
+  </div>
+
+  <!-- Video 2 -->
+  <div class="vids-wrapper">
+    <div class="vids" id="vid2">
+      <video controls>
+        <source src="Start Fix(1)(1)(1).webm" type="video/webm">
+        <source src="Start Fix(1)(1)(1).ogg" type="video/ogg">
+      </video>
+      <div class="info-container">
+        <div class="info-text">
+          Video ini menampilkan efek VHS retro dengan lighting klasik.
+        </div>
+      </div>
     </div>
+    <button class="expand-btn" onclick="toggleExpand('vid2')">Info</button>
+  </div>
+
   <footer>
-    <h1>video works since 2021</h1>
+    <p>2021 karya video complete</p>
   </footer>
+
+  <script>
+    function toggleExpand(id) {
+      const container = document.getElementById(id);
+      container.classList.toggle('expanded');
+    }
+  </script>
+
 </body>
 </html>
