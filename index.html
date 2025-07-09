@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Video Templates</title>
   <style>
     body {
@@ -22,61 +22,46 @@
     }
 
     .vids-wrapper {
-      margin: 30px;
-    }
-
-    .vids {
-      border-radius: 15px;
+      margin: 20px;
       background: gray;
-      padding: 20px;
-      width: 400px;
-      transition: width 0.8s ease;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .vids.expanded {
-      width: 980px;
-    }
-
-    video {
-      width: 400px;
-      height: auto;
-      border-radius: 10px;
-      flex-shrink: 0;
-    }
-
-    .info-container {
-      flex: 1;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      border-radius: 15px;
+      padding: 15px;
       box-sizing: border-box;
     }
 
-    .vids.expanded .info-container {
-      display: flex;
+    .vids video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+      height: auto;
     }
 
-    .info-text {
+    .info-container {
+      display: none;
+      padding: 15px;
+      margin-top: 10px;
+      background-color: #333;
+      border-radius: 10px;
       color: white;
-      font-size: 18px;
-      max-width: 500px;
-      line-height: 1.5;
+      transition: all 0.3s ease;
+    }
+
+    .vids.expanded .info-container {
+      display: block;
     }
 
     .expand-btn {
-      margin: 10px 30px;
-      padding: 10px 20px;
-      background-color: cadetblue;
+      margin-top: 10px;
+      background: none;
       border: none;
+      font-size: 24px;
       color: white;
       cursor: pointer;
-      border-radius: 8px;
-      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .vids.expanded .expand-btn {
+      transform: rotate(180deg);
     }
 
     footer {
@@ -86,61 +71,58 @@
       color: aliceblue;
       margin-top: 23px;
     }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .vids-wrapper {
+        max-width: 700px;
+        margin: 20px auto;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div id="lobot">Video Templates</div>
 
-  <!-- Video 1 -->
+  <!-- Video Template Reusable -->
   <div class="vids-wrapper">
     <div class="vids" id="vid1">
       <video controls>
         <source src="Web Backg.webm" type="video/webm">
         <source src="Web Backg.ogg" type="video/ogg">
       </video>
+      <button class="expand-btn" onclick="toggleExpand('vid1')">⬇️</button>
       <div class="info-container">
-        <div class="info-text">
-          Ini adalah template yang dibuat di After Effects
-          dengan menggunakan kerangka 3d dan juga komposisi
-          keyframe pada effects
-        </div>
+        Ini adalah template yang dibuat di After Effects dengan kerangka 3D dan komposisi keyframe pada efek.
       </div>
     </div>
-    <button class="expand-btn" onclick="toggleExpand('vid1')">Info</button>
   </div>
 
-  <!-- Video 2 -->
   <div class="vids-wrapper">
     <div class="vids" id="vid2">
       <video controls>
         <source src="Start Fix(1)(1)(1).webm" type="video/webm">
         <source src="Start Fix(1)(1)(1).ogg" type="video/ogg">
       </video>
+      <button class="expand-btn" onclick="toggleExpand('vid2')">⬇️</button>
       <div class="info-container">
-        <div class="info-text">
-          Video ini menampilkan seperti bintang yang sedang berjalan
-          dibuat di after effects juga menggunakan komposisi keyframe
-        </div>
+        Video ini menampilkan bintang berjalan. Dibuat di After Effects dengan keyframe.
       </div>
     </div>
-    <button class="expand-btn" onclick="toggleExpand('vid2')">Info</button>
   </div>
-  
-   <div class="vids-wrapper">
+
+  <div class="vids-wrapper">
     <div class="vids" id="vid3">
       <video controls>
         <source src="Background 1.webm" type="video/webm">
         <source src="Background 1.ogg" type="video/ogg">
       </video>
+      <button class="expand-btn" onclick="toggleExpand('vid3')">⬇️</button>
       <div class="info-container">
-        <div class="info-text">
-          video ini dibuat visual tanpa audio untuk memperlihatkan seni
-          natural dan menggunakan kode keyframe dan juga banyak effects 
-        </div>
+        Video tanpa audio ini menonjolkan seni visual natural dengan efek dan keyframe.
       </div>
     </div>
-    <button class="expand-btn" onclick="toggleExpand('vid3')">Info</button>
   </div>
 
   <div class="vids-wrapper">
@@ -149,14 +131,11 @@
         <source src="tutm.webm" type="video/webm">
         <source src="tutm.ogg" type="video/ogg">
       </video>
+      <button class="expand-btn" onclick="toggleExpand('vid4')">⬇️</button>
       <div class="info-container">
-        <div class="info-text">
-          motion dikombinasikan oleh audio yang dibuat
-          di after effects
-        </div>
+        Motion dikombinasikan dengan audio dan dirancang di After Effects.
       </div>
     </div>
-    <button class="expand-btn" onclick="toggleExpand('vid4')">Info</button>
   </div>
 
   <div class="vids-wrapper">
@@ -165,16 +144,13 @@
         <source src="AQUARIUM Fahmi.mp4" type="video/webm">
         <source src="AQUARIUM Fahmi.ogg" type="video/ogg">
       </video>
+      <button class="expand-btn" onclick="toggleExpand('vid5')">⬇️</button>
       <div class="info-container">
-        <div class="info-text">
-          animasi sederhana aquarium dibuat di adobe ilustator dan juga adobe animate
-          menggunakan keyframe dan fitur transisi
-        </div>
+        Animasi aquarium dibuat di Adobe Illustrator & Animate dengan keyframe dan transisi.
       </div>
     </div>
-    <button class="expand-btn" onclick="toggleExpand('vid5')">Info</button>
   </div>
-  
+
   <footer>
     <p>2021 karya video complete</p>
   </footer>
